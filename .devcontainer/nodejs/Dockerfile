@@ -25,13 +25,11 @@ RUN su node -c "npm install -g eas-cli"
 
 # Command-line tools
 # https://developer.android.com/tools
-# useage:
-# $ $ANDROID_SDK_ROOT/cmdline-tools/tools/bin/sdkmanager --install "platform-tools" --sdk_root=$ANDROID_SDK_ROOT
 WORKDIR /home/node
 USER node
-ENV CMDLINE_TOOLS /home/node/android_sdk/cmdline-tools
+ENV ANDROID_SDK_ROOT /home/node/android-sdk
 RUN curl -o tools.zip "https://dl.google.com/android/repository/commandlinetools-linux-6514223_latest.zip"
-RUN mkdir $CMDLINE_TOOLS
-RUN unzip tools.zip -d $CMDLINE_TOOLS
-RUN echo -e "\nexport ANDROID_SDK_ROOT=\"/home/node/android_sdk\"\n" >> /home/node/.bashrc
+RUN mkdir -p $ANDROID_SDK_ROOT/cmdline-tools
+RUN unzip tools.zip -d $ANDROID_SDK_ROOT/cmdline-tools
+RUN yes | $ANDROID_SDK_ROOT/cmdline-tools/tools/bin/sdkmanager --licenses
 USER root
