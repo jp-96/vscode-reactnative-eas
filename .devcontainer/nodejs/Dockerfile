@@ -15,4 +15,5 @@ FROM mcr.microsoft.com/vscode/devcontainers/javascript-node:0-${VARIANT}
 # RUN su node -c "npm install -g <your-package-list-here>"
 
 # Expo
-RUN su node -c "npm install -g expo-cli"
+# RUN su node -c "npm install -g expo-cli"
+RUN su node -c "npm install -g eas-cli"
