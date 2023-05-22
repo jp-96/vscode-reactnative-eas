@@ -22,16 +22,15 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.example.digi_care.eas_react_native_app"
+      "package": "com.example.easreactnativeapp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "extra": {
       "eas": {
-        "projectId": "990ab604-d68a-4f29-8fa9-57a0306d4ea7"
+        "projectId": "77f8a32e-f812-479c-bc3d-e058e2b7c2f4"
       }
-    },
-    "owner": "digi-care"
+    }
   }
 }
