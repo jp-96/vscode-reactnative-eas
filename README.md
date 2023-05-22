@@ -1,3 +1,58 @@
+# vscode-react-native-esa
+
+```
+npm install --global eas-cli
+npx create-expo-app eas-react-native-app
+cd eas-react-native-app
+eas init --id 990ab604-d68a-4f29-8fa9-57a0306d4ea7
+```
+
+https://docs.expo.dev/guides/typescript/#starting-from-scratch-using-a-typescript-template
+
+```
+npx create-expo-app -t expo-template-blank-typescript
+```
+
+https://dev.to/alexcoding42/how-to-create-production-builds-for-app-store-and-play-store-with-easexpo-and-react-native-491d
+
+```
+eas build:configure
+```
+
+https://medium.com/@jmatsu.drm/%E6%9C%80%E6%96%B0%E3%81%AE-android-command-line-tools-%E3%81%AE%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97-1f99605e6bee
+
+```
+export ANDROID_SDK_ROOT="$HOME/sdk"
+mkdir -p $ANDROID_SDK_ROOT/cmdline-tools
+curl -o sdk-tools.zip "https://dl.google.com/android/repository/commandlinetools-linux-6514223_latest.zip"	
+unzip "sdk-tools.zip" -d $ANDROID_SDK_ROOT/cmdline-tools
+$ANDROID_SDK_ROOT/cmdline-tools/tools/bin/sdkmanager <package>...
+```
+
+```
+cd
+export ANDROID_SDK_ROOT="/opt/android_sdk"
+sudo mkdir -p $ANDROID_SDK_ROOT/cmdline-tools
+sudo curl -o android-commandlinetools-linux.zip "https://dl.google.com/android/repository/commandlinetools-linux-9477386_latest.zip"	
+sudo unzip "android-commandlinetools-linux.zip" -d $ANDROID_SDK_ROOT
+$ANDROID_SDK_ROOT/cmdline-tools/bin/sdkmanager <package>...
+```
+
+https://zenn.dev/tadaedo/scraps/6f989f2a104f76
+
+
+```
+export ANDROID_SDK_ROOT="/opt/android_sdk"
+cd $ANDROID_SDK_ROOT
+sudo ./cmdline-tools/bin/sdkmanager --install "platform-tools" "platforms;android-31" --sdk_root=./
+```
+
+```
+cd
+cd ws
+eas build --platform android --profile development --local
+```
+
 # vscode-react-native-expo
 
 https://zenn.dev/username/articles/2021-12-25-9b543d55e9ff81afff09

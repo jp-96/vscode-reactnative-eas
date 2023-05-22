@@ -1,6 +1,6 @@
-# expo-github-action - v7
+# expo-github-action - v8
 # Publish, build or manage your Expo app with GitHub Actions!
-# https://github.com/expo/expo-github-action/tree/v7
+# https://github.com/expo/expo-github-action/tree/v8
 name: expo publish on any push to main
 
 on:
@@ -8,7 +8,7 @@ on:
     branches:
       - main
 jobs:
-  publish:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: 🏗 Setup repo
@@ -17,17 +17,17 @@ jobs:
       - name: 🏗 Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: 16.x
+          node-version: 18.x
           cache: yarn
 
-      - name: 🏗 Setup Expo
-        uses: expo/expo-github-action@v7
+      - name: 🏗 Setup EAS
+        uses: expo/expo-github-action@v8
         with:
-          expo-version: latest
+          eas-version: latest
           token: ${{ secrets.EXPO_TOKEN }}
 
       - name: 📦 Install dependencies
         run: yarn install
 
-      - name: 🚀 Publish app (default)
-        run: expo publish --non-interactive
+      - name: 🚀 Build app (android/production)
+        run: eas build --platform android --profile production --non-interactive --no-wait

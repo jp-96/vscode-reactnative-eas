@@ -14,5 +14,22 @@ FROM mcr.microsoft.com/vscode/devcontainers/javascript-node:0-${VARIANT}
 # [Optional] Uncomment if you want to install more global node modules
 # RUN su node -c "npm install -g <your-package-list-here>"
 
+# OpenJDK
+ARG OPENJDK_VERSION="11-jdk"
+RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
+    && apt-get -y install --no-install-recommends openjdk-${OPENJDK_VERSION}
+
 # Expo
-RUN su node -c "npm install -g expo-cli"
+# RUN su node -c "npm install -g expo-cli"
+RUN su node -c "npm install -g eas-cli"
+
+# Command-line tools
+# https://developer.android.com/tools
+WORKDIR /home/node
+USER node
+ENV ANDROID_SDK_ROOT /home/node/android-sdk
+RUN curl -o tools.zip "https://dl.google.com/android/repository/commandlinetools-linux-6514223_latest.zip"
+RUN mkdir -p $ANDROID_SDK_ROOT/cmdline-tools
+RUN unzip tools.zip -d $ANDROID_SDK_ROOT/cmdline-tools
+RUN yes | $ANDROID_SDK_ROOT/cmdline-tools/tools/bin/sdkmanager --licenses
+USER root
