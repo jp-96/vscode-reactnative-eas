@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "ExpoReactNativeApp",
-    "slug": "ExpoReactNativeApp",
+    "name": "EasReactNativeApp",
+    "slug": "eas-react-native-app",
     "version": "0.0.0-alpha.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -21,10 +21,17 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.example.digi_care.eas_react_native_app"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "990ab604-d68a-4f29-8fa9-57a0306d4ea7"
+      }
+    },
+    "owner": "digi-care"
   }
 }

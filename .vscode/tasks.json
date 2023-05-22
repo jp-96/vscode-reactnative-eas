@@ -15,7 +15,6 @@
             "problemMatcher": [],
             "group": {
                 "kind": "build",
-                "isDefault": true
             },
         },
         {
@@ -39,21 +38,36 @@
             "problemMatcher": [],
         },
         {
-            "label": "yarn: install",
+            "label": "eas: build:android (local)",
             "type": "shell",
-            "command": "yarn",
+            "command": "eas",
+            "args": [
+                "build",
+                "--platform",
+                "android",
+                "--profile",
+                "development",
+                "--local",
+            ],
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+        },
+        {
+            "label": "npm install",
+            "type": "shell",
+            "command": "npm",
             "args": [
                 "install",
-                "--immutable",
-                "--immutable-cache",
-                "--check-cache",
             ],
             "problemMatcher": [],
         },
         {
             "label": "npm-check-updates",
             "type": "shell",
-            "command": "yarn global add npm-check-updates && npm-check-updates -u",
+            "command": "npm install -g npm-check-updates && npm-check-updates -u",
             "problemMatcher": [],
         },
     ],
