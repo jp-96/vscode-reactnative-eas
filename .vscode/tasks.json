@@ -26,6 +26,23 @@
             ],
             "problemMatcher": [],
             "group": {
+                "kind": "build"
+            },
+        },
+        {
+            "label": "eas: local build (android/preview)",
+            "type": "shell",
+            "command": "eas",
+            "args": [
+                "build",
+                "--platform",
+                "android",
+                "--profile",
+                "preview",
+                "--local",
+            ],
+            "problemMatcher": [],
+            "group": {
                 "kind": "build",
                 "isDefault": true
             },
