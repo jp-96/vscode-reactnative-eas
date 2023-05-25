@@ -1,3 +1,13 @@
+# ble
+
+yarn add @config-plugins/react-native-ble-plx react-native-ble-plx
+
+yarn add expo-device react-native-base64
+
+yarn add --dev @types/react-native-base64
+
+yarn add @shopify/react-native-skia 
+
 # vscode-react-native-esa
 
 ```
