@@ -47,5 +47,21 @@
                 "isDefault": true
             },
         },
+        {
+            "label": "eas: build (android/preview)",
+            "type": "shell",
+            "command": "eas",
+            "args": [
+                "build",
+                "--platform",
+                "android",
+                "--profile",
+                "preview",
+            ],
+            "problemMatcher": [],
+            "group": {
+                "kind": "build"
+            },
+        },
     ]
 }
